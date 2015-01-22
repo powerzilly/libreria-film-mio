@@ -1,0 +1,27 @@
+<!DOCTYPE hmtl>
+
+<html ng-app="filmApp">
+    <head><title>Libreria film 0.0.0.</title></head>
+    
+    <body ng-controller="MainCtrl as ctrl">
+        <div ng-repeat="film in ctrl.films">
+            <span class="label">{{film.title}}</span>
+            <span class="data" ng-bind="film.date" ng-cloak></span>
+        </div>
+        <script src="angular.min.js"></script>
+        <script type="text/javascript">
+            angular.module('filmApp',[])
+                .controller('MainCtrl',[function (){
+                    var self = this;
+                    self.films = [
+                        {id: 1, title:'First Film', date: 1690},
+                        {id: 2, title:'Second Film', date: 1900},
+                        {id: 3, title:'Third Film', date: 3200},
+                        {id: 4, title:'Last Film', date: 1234}
+                    ];
+                }]);
+        </script>
+    
+    </body>
+
+</html>
